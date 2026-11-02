@@ -8,3 +8,19 @@ Bootcamp, where I learn R, git & machine learning.
 - CoreHPC interface in Open OnDemand
 - Format for asking for support 
 - Running Rscript at the command line
+
+## Tools
+- **R studio**
+- Positron
+- [Open OnDemand](https://chpc-ucsf-ondemand-vm1.corehpc.ucsf.edu/)
+
+## Examples
+```sh
+sbatch --job-name=dti_$tnum \
+--mem=32G --cpus-per-task=32 \
+--time=02:00:00 \
+ -o processing_logs/dti_${serial}.log \
+ -e processing_logs/dti_${serial}.log \
+ --wrap="process_DTI_brain_RT ${Enum}/${serial} $tnum"
+```
+
